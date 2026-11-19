@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Calon Amil 2027 - UPZIS, JPZIS NU MWC Singosari</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Amiri -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                    },
+                    colors: {
+                        nu: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                            950: '#022c22',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Kop Surat Garis Ganda Khas Organisasi NU */
+        .kop-border {
+            border-bottom: 4px double #000000;
+        }
+
+        /* Custom Print Styles untuk Format Laporan Resmi */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 12mm 14mm;
+            }
+            body {
+                background-color: white !important;
+                color: black !important;
+                font-size: 10pt;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+            .print-container {
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            table {
+                width: 100% !important;
+                border-collapse: collapse !important;
+                page-break-inside: auto;
+            }
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+            thead {
+                display: table-header-group;
+            }
+            th, td {
+                border: 1px solid #000 !important;
+                padding: 6px 8px !important;
+                color: #000 !important;
+                font-size: 9.5pt !important;
+            }
+            th {
+                background-color: #e2e8f0 !important;
+                font-weight: 700 !important;
+            }
+            .badge-print {
+                border: none !important;
+                background: transparent !important;
+                padding: 0 !important;
+                color: #000 !important;
+                font-weight: 500 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Navbar (Hidden on Print) -->
+    <header class="bg-gradient-to-r from-nu-950 via-nu-900 to-nu-800 text-white shadow-xl no-print sticky top-0 z-30 border-b border-nu-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <!-- Brand & Title -->
+                <div class="flex items-start sm:items-center gap-3.5">
+                    <!-- Emblem NU / LAZISNU SVG -->
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-nu-700 to-nu-950 border border-amber-400/40 flex items-center justify-center shrink-0 shadow-lg relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.2),transparent)]"></div>
+                        <svg class="w-8 h-8 sm:w-9 sm:h-9 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M3.6 9h16.8M3.6 15h16.8" />
+                            <path d="M12 3a14.5 14.5 0 0 0 0 18 14.5 14.5 0 0 0 0-18" />
+                            <polygon points="12,1.2 12.6,3 14.5,3 13,4.1 13.6,5.9 12,4.8 10.4,5.9 11,4.1 9.5,3 11.4,3" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-400/40 rounded-full">
+                                Periode Khidmat 2027
+                            </span>
+                            <span id="autosave-badge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 text-[11px] font-medium bg-nu-800/90 text-emerald-200 border border-nu-600/50 rounded-full">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                Tersimpan Otomatis
+                            </span>
+                        </div>
+                        <h1 class="text-lg sm:text-2xl font-extrabold tracking-tight text-white mt-1 leading-tight">
+                            DATA CALON AMIL 2027
+                        </h1>
+                        <p class="text-xs sm:text-sm text-nu-200 font-medium flex items-center gap-1.5 mt-0.5">
+                            <span>UPZIS, JPZIS NU MWC SINGOSARI</span>
+                            <span class="text-amber-400">•</span>
+                            <span class="text-nu-300">Kabupaten Malang</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Action Buttons Header -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="openModal()" class="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-nu-950 font-bold text-sm rounded-xl shadow-md shadow-amber-950/20 transition-all active:scale-95">
+                        <i data-lucide="user-plus" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Tambah Calon Amil</span>
+                    </button>
+
+                    <!-- Dropdown Backup / Sync JSON -->
+                    <div class="relative inline-block" id="sync-menu-container">
+                        <button onclick="toggleSyncMenu()" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 bg-nu-800 hover:bg-nu-700 text-white font-medium text-sm rounded-xl border border-nu-600/60 transition-all active:scale-95" title="Backup & Gabung Data Ranting (JSON)">
+                            <i data-lucide="database-backup" class="w-4 h-4 text-amber-300"></i>
+                            <span class="hidden sm:inline">Backup / Impor</span>
+                            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-nu-300"></i>
+                        </button>
+                        <div id="sync-dropdown" class="hidden absolute right-0 mt-2 w-60 bg-white rounded-2xl shadow-xl border border-slate-200 py-2 z-40 text-slate-700">
+                            <div class="px-3.5 py-1.5 border-b border-slate-100">
+                                <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Sinkronisasi Data MWC</p>
+                            </div>
+                            <button onclick="exportJSON(); toggleSyncMenu();" class="w-full px-3.5 py-2.5 text-left text-xs font-medium hover:bg-nu-50 hover:text-nu-800 flex items-center gap-2.5 transition-colors">
+                                <i data-lucide="download" class="w-4 h-4 text-nu-600"></i>
+                                <div>
+                                    <p class="font-semibold">Unduh Backup (.JSON)</p>
+                                    <p class="text-[11px] text-slate-400">Simpan cadangan atau kirim ke MWC</p>
+                                </div>
+                            </button>
+                            <label class="w-full px-3.5 py-2.5 text-left text-xs font-medium hover:bg-nu-50 hover:text-nu-800 flex items-center gap-2.5 transition-colors cursor-pointer">
+                                <i data-lucide="upload" class="w-4 h-4 text-amber-600"></i>
+                                <div>
+                                    <p class="font-semibold">Impor / Gabung JSON</p>
+                                    <p class="text-[11px] text-slate-400">Gabungkan kiriman data dari Ranting</p>
+                                </div>
+                                <input type="file" id="json-file-input" accept=".json" class="hidden" onchange="importJSON(event)">
+                            </label>
+                        </div>
+                    </div>
+
+                    <button onclick="exportToCSV()" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 bg-nu-700 hover:bg-nu-600 text-white font-medium text-sm rounded-xl border border-nu-500/50 transition-all active:scale-95" title="Unduh file Excel/CSV">
+                        <i data-lucide="file-spreadsheet" class="w-4 h-4 text-emerald-200"></i>
+                        <span class="hidden sm:inline">Ekspor CSV</span>
+                    </button>
+
+                    <button onclick="prepareAndPrint()" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-medium text-sm rounded-xl border border-white/20 transition-all active:scale-95" title="Cetak Laporan Resmi">
+                        <i data-lucide="printer" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">Cetak Laporan</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- KOP SURAT RESMI ORGANISASI NU (Hanya muncul saat Print) -->
+    <div class="hidden print-only mb-5 kop-border pb-3">
+        <div class="flex items-center justify-between gap-4 px-2">
+            <!-- Logo Kiri (Simbol NU/LAZISNU Monochrome Print) -->
+            <div class="w-20 h-20 flex items-center justify-center shrink-0">
+                <svg class="w-18 h-18 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="9.5" />
+                    <path d="M3 9h18M3 15h18" />
+                    <path d="M12 2.5a15 15 0 0 0 0 19 15 15 0 0 0 0-19" />
+                    <polygon points="12,0.8 12.6,2.6 14.5,2.6 13,3.7 13.6,5.5 12,4.4 10.4,5.5 11,3.7 9.5,2.6 11.4,2.6" fill="currentColor" stroke="none"/>
+                </svg>
+            </div>
+            <!-- Teks Kop Tengah -->
+            <div class="text-center flex-1">
+                <p class="font-serif text-base font-bold tracking-wide">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+                <h2 class="text-sm font-bold uppercase tracking-wider mt-0.5">MAJLIS WAKIL CABANG NAHDLATUL ULAMA (MWC NU) KECAMATAN SINGOSARI</h2>
+                <h1 class="text-base font-extrabold uppercase tracking-wide">UNIT PENGELOLA ZAKAT, INFAQ DAN SHADAQAH (UPZIS / JPZIS)</h1>
+                <p class="text-xs mt-0.5">Sekretariat: Jl. Raya Singosari, Kecamatan Singosari, Kabupaten Malang • Jawa Timur</p>
+            </div>
+            <!-- Ruang Penyeimbang Kanan -->
+            <div class="w-20 shrink-0 text-right text-[9pt]">
+                <div class="border border-black px-2 py-1 inline-block text-center">
+                    <p class="font-bold">FORM AMIL</p>
+                    <p>TAHUN 2027</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Judul Dokumen Print (Hanya muncul saat Print) -->
+    <div class="hidden print-only text-center mb-4">
+        <h3 class="text-sm font-extrabold uppercase underline">REKAPITULASI DATA CALON AMIL SYAR'I TAHUN 2027</h3>
+        <p id="print-filter-subtitle" class="text-xs mt-0.5">UPZIS & JPZIS NU SE-MWC SINGOSARI KABUPATEN MALANG</p>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6 print-container">
+
+        <!-- Banner Informasi & Kontrol Cepat Data (Hidden on Print) -->
+        <div class="bg-gradient-to-r from-nu-50 to-emerald-50/60 border border-nu-200/80 rounded-2xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 no-print">
+            <div class="flex items-start gap-3">
+                <div class="p-2 bg-nu-600 text-white rounded-xl shrink-0 shadow-xs mt-0.5 md:mt-0">
+                    <i data-lucide="info" class="w-5 h-5"></i>
+                </div>
+                <div class="text-sm text-nu-950">
+                    <p class="font-bold">Panduan Pendataan Calon Amil Syar'i 2027:</p>
+                    <p class="text-nu-800 text-xs sm:text-sm mt-0.5">
+                        Klik pada <strong>baris tabel</strong> atau tombol <strong>Edit</strong> untuk melengkapi <em>Ranting/Unit JPZIS, Alamat, No. WA, & NIK</em>. Gunakan filter Ranting untuk mencetak rekap per desa atau keseluruhan MWC Singosari.
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 self-end md:self-center shrink-0">
+                <button onclick="openResetModal('initial')" class="inline-flex items-center gap-1.5 text-xs font-semibold text-nu-700 hover:text-nu-900 bg-white hover:bg-nu-100/60 px-3 py-2 rounded-xl border border-nu-200 transition-colors">
+                    <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                    <span>Reset Data Awal</span>
+                </button>
+                <button onclick="openResetModal('empty')" class="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-600 hover:text-rose-700 bg-white hover:bg-rose-50 px-3 py-2 rounded-xl border border-rose-200 transition-colors">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                    <span>Kosongkan Semua</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Dashboard Statistik Real-Time (4 Kartu Ringkasan) -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 no-print">
+            <!-- Card 1: Total Calon Amil -->
+            <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow flex items-center justify-between relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-nu-600"></div>
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Total Calon Amil</p>
+                    <p id="stat-total" class="text-3xl font-extrabold text-slate-900 mt-1">0</p>
+                    <p class="text-xs text-nu-700 font-medium mt-1">Personel terdata MWC</p>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-nu-50 text-nu-700 border border-nu-100 flex items-center justify-center shrink-0">
+                    <i data-lucide="users" class="w-6 h-6"></i>
+                </div>
+            </div>
+
+            <!-- Card 2: Jumlah Ranting / Unit JPZIS Terdata -->
+            <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow flex items-center justify-between relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-amber-500"></div>
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Ranting / Unit JPZIS</p>
+                    <p id="stat-ranting" class="text-3xl font-extrabold text-slate-900 mt-1">0</p>
+                    <p class="text-xs text-amber-700 font-medium mt-1">Dari 17 Ranting & Unit</p>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 border border-amber-100 flex items-center justify-center shrink-0">
+                    <i data-lucide="building-2" class="w-6 h-6"></i>
+                </div>
+            </div>
+
+            <!-- Card 3: Data Lengkap -->
+            <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow flex items-center justify-between relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500"></div>
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Data Lengkap</p>
+                    <p id="stat-complete" class="text-3xl font-extrabold text-emerald-600 mt-1">0</p>
+                    <p id="stat-percent" class="text-xs text-emerald-700 font-medium mt-1">0% siap ajukan SK</p>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-100 flex items-center justify-center shrink-0">
+                    <i data-lucide="badge-check" class="w-6 h-6"></i>
+                </div>
+            </div>
+
+            <!-- Card 4: Data Belum Lengkap -->
+            <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow flex items-center justify-between relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-rose-500"></div>
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Belum Lengkap</p>
+                    <p id="stat-incomplete" class="text-3xl font-extrabold text-rose-600 mt-1">0</p>
+                    <p class="text-xs text-rose-600 font-medium mt-1">Perlu lengkapi alamat/HP</p>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 border border-rose-100 flex items-center justify-center shrink-0">
+                    <i data-lucide="alert-circle" class="w-6 h-6"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pencarian & Filter Cerdas (Hidden on Print) -->
+        <section class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-xs no-print">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+                <!-- Pencarian Real-time -->
+                <div class="md:col-span-4 relative">
+                    <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="Cari nama, alamat, atau no. HP..." 
+                        class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-nu-500 focus:bg-white transition-all"
+                    >
+                </div>
+
+                <!-- Filter Ranting / Unit JPZIS -->
+                <div class="md:col-span-3">
+                    <select id="filter-ranting" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-nu-500 focus:bg-white transition-all">
+                        <option value="all">Semua Ranting / Unit JPZIS</option>
+                        <!-- Diisi otomatis via JS -->
+                    </select>
+                </div>
+
+                <!-- Filter Jabatan -->
+                <div class="md:col-span-3">
+                    <select id="filter-role" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-nu-500 focus:bg-white transition-all">
+                        <option value="all">Semua Jabatan</option>
+                        <option value="pimpinan">Pimpinan / Ketua & Wakil</option>
+                        <option value="sekretaris">Sekretaris</option>
+                        <option value="bendahara">Bendahara</option>
+                        <option value="anggota">Anggota / Petugas Koin NU</option>
+                    </select>
+                </div>
+
+                <!-- Filter Kelengkapan Data -->
+                <div class="md:col-span-2">
+                    <select id="filter-status" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-nu-500 focus:bg-white transition-all">
+                        <option value="all">Semua Status</option>
+                        <option value="complete">Sudah Lengkap</option>
+                        <option value="incomplete">Belum Lengkap</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabel Data Calon Amil -->
+        <section class="bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden print-container">
+            <div class="px-5 py-4 border-b border-slate-100 flex flex-wrap items-center justify-between gap-2 no-print bg-slate-50/50">
+                <div class="flex items-center gap-2.5">
+                    <h2 class="font-bold text-slate-800 text-base">Daftar Calon Amil Syar'i 2027</h2>
+                    <span id="showing-count" class="px-2.5 py-0.5 text-xs font-bold bg-nu-100 text-nu-800 rounded-full border border-nu-200">0 Data</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-slate-500">
+                    <i data-lucide="mouse-pointer-click" class="w-3.5 h-3.5 text-nu-600"></i>
+                    <span>Klik baris manapun untuk edit cepat</span>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-nu-900 text-white text-xs font-bold uppercase tracking-wider">
+                            <th class="py-3.5 px-3.5 text-center w-12">No</th>
+                            <th class="py-3.5 px-4 min-w-[180px]">Nama Lengkap & NIK</th>
+                            <th class="py-3.5 px-4 min-w-[165px]">Ranting / Unit JPZIS</th>
+                            <th class="py-3.5 px-4 min-w-[140px]">Jabatan / Keterangan</th>
+                            <th class="py-3.5 px-4 min-w-[220px]">Alamat Lengkap</th>
+                            <th class="py-3.5 px-4 min-w-[135px]">No. HP / WA</th>
+                            <th class="py-3.5 px-4 min-w-[130px]">Status</th>
+                            <th class="py-3.5 px-4 text-right no-print w-28">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="amil-table-body" class="divide-y divide-slate-100 text-sm">
+                        <!-- Data dirender via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="hidden py-14 px-4 text-center no-print">
+                <div class="w-16 h-16 bg-nu-50 text-nu-600 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-nu-100">
+                    <i data-lucide="folder-search" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-base font-bold text-slate-800">Data Calon Amil Tidak Ditemukan</h3>
+                <p class="text-sm text-slate-500 mt-1 max-w-md mx-auto">Tidak ada data yang cocok dengan filter atau kata kunci pencarian saat ini, atau daftar masih kosong.</p>
+                <div class="mt-5 flex items-center justify-center gap-2.5">
+                    <button onclick="resetFilters()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold rounded-xl transition-colors">
+                        Reset Filter
+                    </button>
+                    <button onclick="openModal()" class="px-4 py-2 bg-nu-700 hover:bg-nu-800 text-white text-sm font-semibold rounded-xl transition-colors">
+                        + Tambah Data Baru
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOK TANDA TANGAN RESMI MWC NU SINGOSARI (Hanya muncul saat Print) -->
+        <div class="hidden print-only mt-8 pt-2">
+            <div class="grid grid-cols-3 gap-6 text-center text-[10pt]">
+                <div>
+                    <p>&nbsp;</p>
+                    <p class="font-bold">Sekretaris UPZIS</p>
+                    <p>MWC NU Singosari</p>
+                    <div class="h-16"></div>
+                    <p class="font-bold underline">( ............................................ )</p>
+                </div>
+                <div>
+                    <p>Mengetahui,</p>
+                    <p class="font-bold">Rois Syuriah / Ketua Tanfidziyah</p>
+                    <p>MWC NU Kecamatan Singosari</p>
+                    <div class="h-16"></div>
+                    <p class="font-bold underline">( ............................................ )</p>
+                </div>
+                <div>
+                    <p id="print-date-location">Singosari, .......................... 2026</p>
+                    <p class="font-bold">Ketua UPZIS / JPZIS</p>
+                    <p>MWC NU Kecamatan Singosari</p>
+                    <div class="h-16"></div>
+                    <p class="font-bold underline">( ............................................ )</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Hidden on Print) -->
+    <footer class="bg-white border-t border-slate-200 py-4 mt-8 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
+            <p>© 2026–2027 <strong>UPZIS & JPZIS NU MWC Singosari</strong> • Kabupaten Malang. Sistem Pendataan Amil Syar'i.</p>
+            <p class="flex items-center gap-1.5 text-nu-700 font-semibold">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                <span>Data Tersimpan Lokal di Perangkat Anda</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- MODAL TAMBAH / EDIT CEPAT CALON AMIL -->
+    <div id="form-modal" class="fixed inset-0 z-50 hidden overflow-y-auto no-print" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs transition-opacity" onclick="closeModal()"></div>
+
+        <div class="flex min-h-full items-center justify-center p-4">
+            <div class="relative w-full max-w-xl transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200">
+                <!-- Modal Header -->
+                <div class="bg-gradient-to-r from-nu-900 to-nu-800 px-6 py-4 flex items-center justify-between text-white border-b border-nu-700">
+                    <div class="flex items-center gap-2.5">
+                        <div class="p-1.5 bg-amber-400/20 text-amber-300 rounded-lg">
+                            <i data-lucide="user-pen" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 id="modal-title" class="text-base sm:text-lg font-bold">Lengkapi Data Calon Amil</h3>
+                            <p class="text-[11px] text-nu-200">UPZIS, JPZIS NU MWC Singosari • Periode 2027</p>
+                        </div>
+                    </div>
+                    <button onclick="closeModal()" class="text-nu-200 hover:text-white p-1.5 rounded-lg hover:bg-white/10 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+
+                <!-- Form Body -->
+                <form id="amil-form" onsubmit="saveAmilData(event)" class="p-6 space-y-4">
+                    <input type="hidden" id="field-id">
+
+                    <!-- Nama Lengkap -->
+                    <div>
+                        <label for="field-nama" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                            Nama Lengkap (Sesuai KTP) <span class="text-rose-500">*</span>
+                        </label>
+                        <input type="text" id="field-nama" required placeholder="Contoh: Aghist Khusroni"
+                            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-nu-500 focus:bg-white">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Ranting / Unit JPZIS -->
+                        <div>
+                            <label for="field-ranting" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                                Ranting / Unit JPZIS <span class="text-rose-500">*</span>
+                            </label>
+                            <input type="text" id="field-ranting" list="ranting-datalist" required placeholder="Pilih atau ketik unit..."
+                                class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-nu-500 focus:bg-white">
+                            <datalist id="ranting-datalist">
+                                <option value="UPZIS MWC Singosari">
+                                <option value="Ranting Randuagung">
+                                <option value="Ranting Banjararum">
+                                <option value="Ranting Pagentan">
+                                <option value="Ranting Candirenggo">
+                                <option value="Ranting Klampok">
+                                <option value="Ranting Toyomarto">
+                                <option value="Ranting Ardimulyo">
+                                <option value="Ranting Watugede">
+                                <option value="Ranting Baturetno">
+                                <option value="Ranting Tamanharjo">
+                                <option value="Ranting Gunungrejo">
+                                <option value="Ranting Dengkol">
+                                <option value="Ranting Wonorejo">
+                                <option value="Ranting Purwoasri">
+                                <option value="Ranting Losari">
+                                <option value="Ranting Langlang">
+                                <option value="Ranting Tunjungtirto">
+                                <option value="JPZIS Masjid / Musholla">
+                                <option value="JPZIS Lembaga Pendidikan Ma'arif">
+                            </datalist>
+                        </div>
+
+                        <!-- Jabatan / Keterangan -->
+                        <div>
+                            <label for="field-keterangan" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                                Jabatan / Keterangan <span class="text-rose-500">*</span>
+                            </label>
+                            <input type="text" id="field-keterangan" list="jabatan-datalist" required placeholder="Pilih atau ketik jabatan..."
+                                class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-nu-500 focus:bg-white">
+                            <datalist id="jabatan-datalist">
+                                <option value="Ketua">
+                                <option value="Wakil Ketua">
+                                <option value="Sekretaris">
+                                <option value="Sekretaris 1">
+                                <option value="Sekretaris 2">
+                                <option value="Bendahara">
+                                <option value="Koordinator Lapangan">
+                                <option value="Anggota / Petugas Koin NU">
+                            </datalist>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- No. HP / WhatsApp -->
+                        <div>
+                            <label for="field-hp" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                                No. HP / WhatsApp
+                            </label>
+                            <input type="tel" id="field-hp" placeholder="Contoh: 081234567890"
+                                class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-nu-500 focus:bg-white">
+                        </div>
+
+                        <!-- NIK (16 Digit) -->
+                        <div>
+                            <label for="field-nik" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                                NIK / No. KTP <span class="text-slate-400 font-normal">(16 Digit)</span>
+                            </label>
+                            <input type="text" id="field-nik" maxlength="16" pattern="[0-9]*" inputmode="numeric" placeholder="3507xxxxxxxxxxxx"
+                                class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm font-mono text-slate-800 focus:outline-none focus:ring-2 focus:ring-nu-500 focus:bg-white">
+                        </div>
+                    </div>
+
+                    <!-- Alamat Lengkap -->
+                    <div>
+                        <label for="field-alamat" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                            Alamat Lengkap (Dusun / Jalan / RT / RW / Desa)
+                        </label>
+                        <textarea id="field-alamat" rows="2" placeholder="Contoh: Dusun Krajan RT 02 / RW 01, Desa Randuagung, Kec. Singosari"
+                            class="w-full px-3.5 py-2.5 bg-amber-50/40 border border-amber-300 rounded-xl text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-nu-500 focus:bg-white"></textarea>
+                    </div>
+
+                    <!-- Status Verifikasi -->
+                    <div>
+                        <label for="field-status" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                            Status Verifikasi Berkas Amil Syar'i
+                        </label>
+                        <select id="field-status" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-nu-500 focus:bg-white">
+                            <option value="Proses Lengkapi">Proses Lengkapi (Menunggu Alamat / KTP)</option>
+                            <option value="Siap SK">Siap SK (Data & Berkas Terverifikasi)</option>
+                        </select>
+                    </div>
+
+                    <!-- Modal Footer Buttons -->
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-end gap-2.5">
+                        <button type="button" onclick="closeModal()" class="px-4 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">
+                            Batal
+                        </button>
+                        <button type="submit" class="inline-flex items-center gap-2 px-5 py-2.5 bg-nu-700 hover:bg-nu-800 text-white text-sm font-bold rounded-xl shadow-md transition-all active:scale-95">
+                            <i data-lucide="save" class="w-4 h-4"></i>
+                            <span>Simpan Data</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL KONFIRMASI HAPUS SATU DATA -->
+    <div id="delete-modal" class="fixed inset-0 z-50 hidden overflow-y-auto no-print">
+        <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs" onclick="closeDeleteModal()"></div>
+        <div class="flex min-h-full items-center justify-center p-4">
+            <div class="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl border border-slate-200 text-center">
+                <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-600 border border-rose-100 flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="trash-2" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-800">Hapus Data Calon Amil?</h3>
+                <p class="text-sm text-slate-500 mt-2">
+                    Anda yakin ingin menghapus <strong id="delete-target-name" class="text-slate-800"></strong> dari daftar Calon Amil 2027?
+                </p>
+                <div class="mt-6 flex items-center justify-center gap-3">
+                    <button onclick="closeDeleteModal()" class="px-4 py-2.5 text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors">
+                        Batal
+                    </button>
+                    <button id="confirm-delete-btn" class="px-5 py-2.5 text-sm font-bold text-white bg-rose-600 hover:bg-rose-700 rounded-xl shadow-sm transition-colors">
+                        Ya, Hapus
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL KONFIRMASI RESET / KOSONGKAN DATA -->
+    <div id="reset-modal" class="fixed inset-0 z-50 hidden overflow-y-auto no-print">
+        <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs" onclick="closeResetModal()"></div>
+        <div class="flex min-h-full items-center justify-center p-4">
+            <div class="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl border border-slate-200 text-center">
+                <div id="reset-icon-box" class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 border border-amber-100 flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="alert-triangle" class="w-7 h-7"></i>
+                </div>
+                <h3 id="reset-modal-title" class="text-lg font-bold text-slate-800">Reset ke Data Awal?</h3>
+                <p id="reset-modal-desc" class="text-sm text-slate-500 mt-2">
+                    Semua perubahan saat ini akan diganti dengan data contoh awal MWC NU Singosari.
+                </p>
+                <div class="mt-6 flex items-center justify-center gap-3">
+                    <button onclick="closeResetModal()" class="px-4 py-2.5 text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors">
+                        Batal
+                    </button>
+                    <button id="confirm-reset-btn" class="px-5 py-2.5 text-sm font-bold text-white bg-amber-600 hover:bg-amber-700 rounded-xl shadow-sm transition-colors">
+                        Lanjutkan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none no-print">
+        <div class="bg-nu-950 text-white px-4 py-3 rounded-2xl shadow-2xl border border-nu-700 flex items-center gap-3 text-sm font-medium">
+            <div id="toast-icon-wrap" class="p-1 rounded-lg bg-emerald-500/20 text-emerald-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            </div>
+            <span id="toast-message">Data berhasil disimpan!</span>
+        </div>
+    </div>
+
+    <script>
+        // Kunci LocalStorage khusus MWC Singosari 2027
+        const STORAGE_KEY = 'upzis_mwc_singosari_amil_2027_v1';
+
+        // Daftar 17 Ranting NU se-Kecamatan Singosari + Unit MWC & JPZIS
+        const RANTING_LIST = [
+            'UPZIS MWC Singosari',
+            'Ranting Randuagung',
+            'Ranting Banjararum',
+            'Ranting Pagentan',
+            'Ranting Candirenggo',
+            'Ranting Klampok',
+            'Ranting Toyomarto',
+            'Ranting Ardimulyo',
+            'Ranting Watugede',
+            'Ranting Baturetno',
+            'Ranting Tamanharjo',
+            'Ranting Gunungrejo',
+            'Ranting Dengkol',
+            'Ranting Wonorejo',
+            'Ranting Purwoasri',
+            'Ranting Losari',
+            'Ranting Langlang',
+            'Ranting Tunjungtirto',
+            'JPZIS Masjid / Musholla',
+            'JPZIS Lembaga Pendidikan'
+        ];
+
+        // Data Awal Realistis (Termasuk Ranting Randuagung & perwakilan ranting lain di MWC Singosari)
+        const INITIAL_DATA = [
+            { id: '101', nama: 'Aghist Khusroni', ranting: 'Ranting Randuagung', keterangan: 'Ketua', alamat: 'Dusun Krajan RT 02 / RW 01, Desa Randuagung', hp: '081234567101', nik: '', status: 'Siap SK' },
+            { id: '102', nama: "Ni'am Faizin", ranting: 'Ranting Randuagung', keterangan: 'Wakil Ketua', alamat: 'Desa Randuagung, Kec. Singosari', hp: '081234567102', nik: '', status: 'Proses Lengkapi' },
+            { id: '103', nama: 'Moh Farid', ranting: 'Ranting Randuagung', keterangan: 'Sekretaris', alamat: '', hp: '', nik: '', status: 'Proses Lengkapi' },
+            { id: '104', nama: 'Salman Al F.', ranting: 'Ranting Randuagung', keterangan: 'Bendahara', alamat: '', hp: '', nik: '', status: 'Proses Lengkapi' },
+            { id: '105', nama: 'H. Ahmad Muzakki', ranting: 'UPZIS MWC Singosari', keterangan: 'Ketua', alamat: 'Jl. Raya Singosari No. 45, Pagentan', hp: '081334567201', nik: '3507241205780001', status: 'Siap SK' },
+            { id: '106', nama: 'M. Syafi\'i Ma\'arif', ranting: 'Ranting Banjararum', keterangan: 'Ketua', alamat: 'Dusun Mondoroko RT 04 / RW 02, Banjararum', hp: '085734567301', nik: '3507241508820003', status: 'Siap SK' },
+            { id: '107', nama: 'Abdul Rouf', ranting: 'Ranting Candirenggo', keterangan: 'Koordinator Lapangan', alamat: 'Jl. Tumapel RT 01 / RW 03, Candirenggo', hp: '082134567401', nik: '', status: 'Proses Lengkapi' },
+            { id: '108', nama: 'Khoirul Anam', ranting: 'Ranting Toyomarto', keterangan: 'Ketua', alamat: 'Dusun Sumberawan RT 03 / RW 05, Toyomarto', hp: '081934567501', nik: '3507242003850002', status: 'Siap SK' },
+            { id: '109', nama: 'Siti Aminah, S.Pd.', ranting: 'Ranting Pagentan', keterangan: 'Bendahara', alamat: 'Jl. Kertanegara RT 02 / RW 04, Pagentan', hp: '081234567601', nik: '3507245407890004', status: 'Siap SK' },
+            { id: '110', nama: 'M. Nashit Atiq', ranting: 'Ranting Randuagung', keterangan: 'Anggota / Petugas Koin NU', alamat: '', hp: '', nik: '', status: 'Proses Lengkapi' }
+        ];
+
+        let amilList = [];
+        let deleteTargetId = null;
+
+        // Inisialisasi Aplikasi
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
+            populateRantingFilter();
+            renderTable();
+            updateStats();
+            lucide.createIcons();
+
+            // Event Listener untuk Filter & Search
+            document.getElementById('search-input').addEventListener('input', renderTable);
+            document.getElementById('filter-ranting').addEventListener('change', renderTable);
+            document.getElementById('filter-role').addEventListener('change', renderTable);
+            document.getElementById('filter-status').addEventListener('change', renderTable);
+
+            // Tutup dropdown sync saat klik di luar
+            document.addEventListener('click', (e) => {
+                const container = document.getElementById('sync-menu-container');
+                const dropdown = document.getElementById('sync-dropdown');
+                if (container && !container.contains(e.target)) {
+                    dropdown.classList.add('hidden');
+                }
+            });
+        });
+
+        // Toggle Dropdown Backup / Impor
+        function toggleSyncMenu() {
+            const dropdown = document.getElementById('sync-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Muat data dari LocalStorage
+        function loadData() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    amilList = JSON.parse(saved);
+                } else {
+                    amilList = JSON.parse(JSON.stringify(INITIAL_DATA));
+                    saveToStorage();
+                }
+            } catch (e) {
+                console.error('Gagal memuat LocalStorage:', e);
+                amilList = JSON.parse(JSON.stringify(INITIAL_DATA));
+            }
+        }
+
+        // Simpan ke LocalStorage + animasi indikator auto-save
+        function saveToStorage() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(amilList));
+                const badge = document.getElementById('autosave-badge');
+                if (badge) {
+                    badge.classList.add('ring-2', 'ring-emerald-400/50');
+                    setTimeout(() => badge.classList.remove('ring-2', 'ring-emerald-400/50'), 600);
+                }
+            } catch (e) {
+                console.error('Gagal menyimpan ke LocalStorage:', e);
+            }
+        }
+
+        // Isi Dropdown Filter Ranting secara dinamis (gabungan daftar baku + ranting kustom yang diinput user)
+        function populateRantingFilter() {
+            const select = document.getElementById('filter-ranting');
+            const currentVal = select.value;
+
+            const customRantings = amilList
+                .map(item => item.ranting)
+                .filter(r => r && !RANTING_LIST.includes(r));
+            const uniqueCustom = [...new Set(customRantings)];
+
+            const allOptions = [...RANTING_LIST, ...uniqueCustom];
+
+            select.innerHTML = `<option value="all">Semua Ranting / Unit JPZIS (${allOptions.length})</option>` +
+                allOptions.map(r => `<option value="${escapeHtml(r)}">${escapeHtml(r)}</option>`).join('');
+
+            if (allOptions.includes(currentVal)) {
+                select.value = currentVal;
+            }
+        }
+
+        // Cek apakah satu entri data sudah dianggap lengkap (Alamat & No. HP terisi, atau status Siap SK)
+        function isEntryComplete(item) {
+            const hasAddress = item.alamat && item.alamat.trim() !== '';
+            const hasHp = item.hp && item.hp.trim() !== '';
+            return (hasAddress && hasHp) || item.status === 'Siap SK';
+        }
+
+        // Update 4 Kartu Statistik Dashboard
+        function updateStats() {
+            const total = amilList.length;
+            const uniqueRantings = new Set(amilList.map(i => (i.ranting || '').trim()).filter(Boolean)).size;
+            const complete = amilList.filter(isEntryComplete).length;
+            const incomplete = total - complete;
+            const percent = total > 0 ? Math.round((complete / total) * 100) : 0;
+
+            document.getElementById('stat-total').textContent = total;
+            document.getElementById('stat-ranting').textContent = uniqueRantings;
+            document.getElementById('stat-complete').textContent = complete;
+            document.getElementById('stat-incomplete').textContent = incomplete;
+            document.getElementById('stat-percent').textContent = `${percent}% data lengkap`;
+        }
+
+        // Helper Warna Badge Jabatan
+        function getRoleBadgeClass(role) {
+            const r = (role || '').toLowerCase();
+            if (r.includes('ketua')) return 'bg-nu-100 text-nu-900 border-nu-300';
+            if (r.includes('sekretaris')) return 'bg-sky-100 text-sky-900 border-sky-300';
+            if (r.includes('bendahara')) return 'bg-amber-100 text-amber-900 border-amber-300';
+            if (r.includes('koordinator')) return 'bg-purple-100 text-purple-900 border-purple-300';
+            return 'bg-slate-100 text-slate-700 border-slate-200';
+        }
+
+        // Helper Badge Status Verifikasi
+        function getStatusBadge(status) {
+            if (status === 'Siap SK') {
+                return `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 badge-print">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600 no-print"></i> Siap SK
+                </span>`;
+            }
+            return `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 border border-amber-200 badge-print">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-600 no-print"></i> Proses Lengkapi
+            </span>`;
+        }
+
+        // Render Tabel Utama
+        function renderTable() {
+            const tbody = document.getElementById('amil-table-body');
+            const emptyState = document.getElementById('empty-state');
+            const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+            const rantingFilter = document.getElementById('filter-ranting').value;
+            const roleFilter = document.getElementById('filter-role').value;
+            const statusFilter = document.getElementById('filter-status').value;
+
+            const filtered = amilList.filter(item => {
+                // Pencarian Nama, Alamat, No HP, atau NIK
+                const matchSearch = 
+                    (item.nama && item.nama.toLowerCase().includes(searchQuery)) ||
+                    (item.ranting && item.ranting.toLowerCase().includes(searchQuery)) ||
+                    (item.keterangan && item.keterangan.toLowerCase().includes(searchQuery)) ||
+                    (item.alamat && item.alamat.toLowerCase().includes(searchQuery)) ||
+                    (item.hp && item.hp.toLowerCase().includes(searchQuery)) ||
+                    (item.nik && item.nik.toLowerCase().includes(searchQuery));
+
+                // Filter Ranting
+                const matchRanting = rantingFilter === 'all' || item.ranting === rantingFilter;
+
+                // Filter Jabatan
+                let matchRole = true;
+                const roleLower = (item.keterangan || '').toLowerCase();
+                if (roleFilter === 'pimpinan') matchRole = roleLower.includes('ketua');
+                else if (roleFilter === 'sekretaris') matchRole = roleLower.includes('sekretaris');
+                else if (roleFilter === 'bendahara') matchRole = roleLower.includes('bendahara');
+                else if (roleFilter === 'anggota') matchRole = roleLower.includes('anggota') || roleLower.includes('petugas') || roleLower.includes('koordinator');
+
+                // Filter Kelengkapan Data
+                let matchStatus = true;
+                const complete = isEntryComplete(item);
+                if (statusFilter === 'complete') matchStatus = complete;
+                else if (statusFilter === 'incomplete') matchStatus = !complete;
+
+                return matchSearch && matchRanting && matchRole && matchStatus;
+            });
+
+            document.getElementById('showing-count').textContent = `${filtered.length} Data`;
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                lucide.createIcons();
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            tbody.innerHTML = filtered.map((item, index) => {
+                const hasAddress = item.alamat && item.alamat.trim() !== '';
+                const hasHp = item.hp && item.hp.trim() !== '';
+
+                return `
+                <tr onclick="openModal('${item.id}')" class="hover:bg-nu-50/60 transition-colors cursor-pointer group">
+                    <td class="py-3.5 px-3.5 text-center font-bold text-slate-500">${index + 1}</td>
+                    <td class="py-3.5 px-4">
+                        <div class="font-bold text-slate-900 group-hover:text-nu-800 transition-colors">
+                            ${escapeHtml(item.nama)}
+                        </div>
+                        ${item.nik 
+                            ? `<div class="text-[11px] text-slate-500 font-mono mt-0.5">NIK: ${escapeHtml(item.nik)}</div>` 
+                            : `<div class="text-[11px] text-slate-400 italic mt-0.5 no-print">NIK belum diisi</div>`
+                        }
+                    </td>
+                    <td class="py-3.5 px-4">
+                        <span class="inline-flex items-center gap-1.5 font-semibold text-nu-900 text-xs bg-nu-50 px-2.5 py-1 rounded-lg border border-nu-200/80 badge-print">
+                            <i data-lucide="map-pin" class="w-3 h-3 text-nu-600 no-print"></i>
+                            ${escapeHtml(item.ranting || '-')}
+                        </span>
+                    </td>
+                    <td class="py-3.5 px-4">
+                        <span class="inline-block px-2.5 py-1 text-xs font-bold rounded-lg border ${getRoleBadgeClass(item.keterangan)} badge-print">
+                            ${escapeHtml(item.keterangan)}
+                        </span>
+                    </td>
+                    <td class="py-3.5 px-4">
+                        ${hasAddress 
+                            ? `<div class="text-slate-700 text-xs sm:text-sm leading-snug">${escapeHtml(item.alamat)}</div>`
+                            : `<span class="no-print inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-rose-50 text-rose-700 border border-rose-200 text-xs font-semibold">
+                                <i data-lucide="plus-circle" class="w-3.5 h-3.5"></i> Lengkapi Alamat
+                               </span>
+                               <span class="hidden print-only text-slate-400 italic">-</span>`
+                        }
+                    </td>
+                    <td class="py-3.5 px-4" onclick="event.stopPropagation()">
+                        ${hasHp 
+                            ? `<a href="https://wa.me/${formatWaNumber(item.hp)}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-nu-700 hover:text-nu-900 hover:underline font-semibold text-xs">
+                                <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-600 no-print"></i>
+                                <span>${escapeHtml(item.hp)}</span>
+                               </a>`
+                            : `<button onclick="openModal('${item.id}')" class="no-print text-xs text-amber-700 hover:underline font-medium">+ Isi No. WA</button>
+                               <span class="hidden print-only">-</span>`
+                        }
+                    </td>
+                    <td class="py-3.5 px-4">
+                        ${getStatusBadge(item.status)}
+                    </td>
+                    <td class="py-3.5 px-4 text-right no-print" onclick="event.stopPropagation()">
+                        <div class="inline-flex items-center justify-end gap-1">
+                            <button onclick="openModal('${item.id}')" class="inline-flex items-center gap-1 px-2.5 py-1.5 bg-nu-50 hover:bg-nu-100 text-nu-800 font-bold text-xs rounded-lg border border-nu-200 transition-colors" title="Edit Cepat">
+                                <i data-lucide="pencil" class="w-3.5 h-3.5"></i>
+                                <span>Edit</span>
+                            </button>
+                            <button onclick="openDeleteModal('${item.id}')" class="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors" title="Hapus Data">
+                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                `;
+            }).join('');
+
+            lucide.createIcons();
+        }
+
+        // Format Nomor WA untuk tautan wa.me
+        function formatWaNumber(phone) {
+            let clean = (phone || '').replace(/\D/g, '');
+            if (clean.startsWith('0')) {
+                clean = '62' + clean.substring(1);
+            }
+            return clean;
+        }
+
+        // Keamanan XSS
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Reset Filter
+        function resetFilters() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('filter-ranting').value = 'all';
+            document.getElementById('filter-role').value = 'all';
+            document.getElementById('filter-status').value = 'all';
+            renderTable();
+        }
+
+        // Buka Modal Tambah / Edit Cepat
+        function openModal(id = null) {
+            const modal = document.getElementById('form-modal');
+            const title = document.getElementById('modal-title');
+            const form = document.getElementById('amil-form');
+
+            form.reset();
+
+            if (id) {
+                const item = amilList.find(a => a.id === id);
+                if (!item) return;
+
+                title.textContent = 'Edit Cepat Data Calon Amil';
+                document.getElementById('field-id').value = item.id;
+                document.getElementById('field-nama').value = item.nama;
+                document.getElementById('field-ranting').value = item.ranting || '';
+                document.getElementById('field-keterangan').value = item.keterangan || '';
+                document.getElementById('field-hp').value = item.hp || '';
+                document.getElementById('field-nik').value = item.nik || '';
+                document.getElementById('field-alamat').value = item.alamat || '';
+                document.getElementById('field-status').value = item.status || 'Proses Lengkapi';
+            } else {
+                title.textContent = 'Tambah Calon Amil 2027';
+                document.getElementById('field-id').value = '';
+                // Jika user sedang memfilter ranting tertentu, otomatis pilih ranting tersebut
+                const activeRantingFilter = document.getElementById('filter-ranting').value;
+                if (activeRantingFilter !== 'all') {
+                    document.getElementById('field-ranting').value = activeRantingFilter;
+                }
+                document.getElementById('field-keterangan').value = 'Anggota / Petugas Koin NU';
+                document.getElementById('field-status').value = 'Proses Lengkapi';
+            }
+
+            modal.classList.remove('hidden');
+            lucide.createIcons();
+
+            setTimeout(() => {
+                if (id && !document.getElementById('field-alamat').value) {
+                    document.getElementById('field-alamat').focus();
+                } else {
+                    document.getElementById('field-nama').focus();
+                }
+            }, 80);
+        }
+
+        function closeModal() {
+            document.getElementById('form-modal').classList.add('hidden');
+        }
+
+        // Simpan Data Form
+        function saveAmilData(event) {
+            event.preventDefault();
+
+            const id = document.getElementById('field-id').value;
+            const nama = document.getElementById('field-nama').value.trim();
+            const ranting = document.getElementById('field-ranting').value.trim();
+            const keterangan = document.getElementById('field-keterangan').value.trim();
+            const hp = document.getElementById('field-hp').value.trim();
+            const nik = document.getElementById('field-nik').value.trim();
+            const alamat = document.getElementById('field-alamat').value.trim();
+            let status = document.getElementById('field-status').value;
+
+            // Otomatis naikkan status ke 'Siap SK' jika alamat, HP, dan NIK sudah diisi lengkap
+            if (alamat !== '' && hp !== '' && nik.length === 16 && status === 'Proses Lengkapi') {
+                status = 'Siap SK';
+            }
+
+            if (id) {
+                const index = amilList.findIndex(item => item.id === id);
+                if (index !== -1) {
+                    amilList[index] = { id, nama, ranting, keterangan, hp, nik, alamat, status };
+                    showToast(`Data ${nama} (${ranting}) berhasil diperbarui!`);
+                }
+            } else {
+                const newId = Date.now().toString();
+                amilList.push({ id: newId, nama, ranting, keterangan, hp, nik, alamat, status });
+                showToast(`${nama} berhasil ditambahkan ke ${ranting}!`);
+            }
+
+            saveToStorage();
+            populateRantingFilter();
+            renderTable();
+            updateStats();
+            closeModal();
+        }
+
+        // Modal Konfirmasi Hapus
+        function openDeleteModal(id) {
+            const item = amilList.find(a => a.id === id);
+            if (!item) return;
+
+            deleteTargetId = id;
+            document.getElementById('delete-target-name').textContent = `${item.nama} (${item.ranting})`;
+            document.getElementById('delete-modal').classList.remove('hidden');
+
+            document.getElementById('confirm-delete-btn').onclick = () => {
+                amilList = amilList.filter(a => a.id !== deleteTargetId);
+                saveToStorage();
+                populateRantingFilter();
+                renderTable();
+                updateStats();
+                closeDeleteModal();
+                showToast(`Data ${item.nama} telah dihapus.`, 'warning');
+            };
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('delete-modal').classList.add('hidden');
+            deleteTargetId = null;
+        }
+
+        // Modal Konfirmasi Reset / Kosongkan
+        function openResetModal(mode) {
+            const modal = document.getElementById('reset-modal');
+            const title = document.getElementById('reset-modal-title');
+            const desc = document.getElementById('reset-modal-desc');
+            const btn = document.getElementById('confirm-reset-btn');
+
+            if (mode === 'empty') {
+                title.textContent = 'Kosongkan Semua Data?';
+                desc.textContent = 'Seluruh daftar calon amil akan dihapus (0 data) agar Anda dapat mulai menginput dari awal. Pastikan sudah mengunduh backup jika diperlukan.';
+                btn.textContent = 'Ya, Kosongkan Semua';
+                btn.className = 'px-5 py-2.5 text-sm font-bold text-white bg-rose-600 hover:bg-rose-700 rounded-xl shadow-sm transition-colors';
+                btn.onclick = () => {
+                    amilList = [];
+                    saveToStorage();
+                    populateRantingFilter();
+                    resetFilters();
+                    updateStats();
+                    closeResetModal();
+                    showToast('Semua data telah dikosongkan.', 'warning');
+                };
+            } else {
+                title.textContent = 'Reset ke Data Contoh Awal?';
+                desc.textContent = 'Daftar akan dikembalikan ke 10 data contoh awal perwakilan Ranting se-MWC NU Singosari.';
+                btn.textContent = 'Reset Data Awal';
+                btn.className = 'px-5 py-2.5 text-sm font-bold text-white bg-amber-600 hover:bg-amber-700 rounded-xl shadow-sm transition-colors';
+                btn.onclick = () => {
+                    amilList = JSON.parse(JSON.stringify(INITIAL_DATA));
+                    saveToStorage();
+                    populateRantingFilter();
+                    resetFilters();
+                    updateStats();
+                    closeResetModal();
+                    showToast('Data dikembalikan ke daftar awal MWC Singosari.');
+                };
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeResetModal() {
+            document.getElementById('reset-modal').classList.add('hidden');
+        }
+
+        // Ekspor ke CSV (Excel-friendly dengan BOM UTF-8)
+        function exportToCSV() {
+            if (amilList.length === 0) {
+                showToast('Tidak ada data untuk diekspor.', 'warning');
+                return;
+            }
+
+            const headers = ['NO', 'NAMA LENGKAP', 'RANTING / UNIT JPZIS', 'JABATAN / KETERANGAN', 'ALAMAT LENGKAP', 'NO. HP / WA', 'NIK', 'STATUS VERIFIKASI'];
+            const rows = amilList.map((item, idx) => [
+                idx + 1,
+                `"${(item.nama || '').replace(/"/g, '""')}"`,
+                `"${(item.ranting || '').replace(/"/g, '""')}"`,
+                `"${(item.keterangan || '').replace(/"/g, '""')}"`,
+                `"${(item.alamat || '').replace(/"/g, '""')}"`,
+                `"${(item.hp || '').replace(/"/g, '""')}"`,
+                item.nik ? `"'${item.nik}"` : '""',
+                `"${(item.status || '').replace(/"/g, '""')}"`
+            ]);
+
+            const csvContent = [
+                '"DATA CALON AMIL 2027 - UPZIS, JPZIS NU MWC SINGOSARI (KABUPATEN MALANG)"',
+                '',
+                headers.join(','),
+                ...rows.map(r => r.join(','))
+            ].join('\n');
+
+            const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'Data_Calon_Amil_2027_MWC_NU_Singosari.csv');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+
+            showToast('File Excel/CSV berhasil diunduh!');
+        }
+
+        // Backup JSON (Untuk kirim/arsip data antar Ranting & MWC)
+        function exportJSON() {
+            const payload = {
+                app: 'UPZIS_JPZIS_NU_MWC_SINGOSARI_2027',
+                exportedAt: new Date().toISOString(),
+                total: amilList.length,
+                data: amilList
+            };
+            const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', `Backup_Calon_Amil_2027_MWC_Singosari_${new Date().toISOString().slice(0,10)}.json`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+
+            showToast('File Backup JSON berhasil diunduh!');
+        }
+
+        // Impor / Gabung JSON dari Ranting
+        function importJSON(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const parsed = JSON.parse(e.target.result);
+                    const incoming = Array.isArray(parsed) ? parsed : (parsed.data || []);
+
+                    if (!Array.isArray(incoming) || incoming.length === 0) {
+                        showToast('File JSON tidak valid atau kosong.', 'warning');
+                        return;
+                    }
+
+                    let addedCount = 0;
+                    incoming.forEach(entry => {
+                        if (entry && entry.nama) {
+                            // Cegah duplikasi persis berdasarkan Nama + Ranting
+                            const exists = amilList.some(
+                                existing => existing.nama.toLowerCase().trim() === entry.nama.toLowerCase().trim() &&
+                                            (existing.ranting || '').toLowerCase().trim() === (entry.ranting || '').toLowerCase().trim()
+                            );
+                            if (!exists) {
+                                amilList.push({
+                                    id: Date.now().toString() + Math.random().toString(36).substring(2, 6),
+                                    nama: entry.nama.trim(),
+                                    ranting: (entry.ranting || 'UPZIS MWC Singosari').trim(),
+                                    keterangan: (entry.keterangan || 'Anggota').trim(),
+                                    alamat: (entry.alamat || '').trim(),
+                                    hp: (entry.hp || '').trim(),
+                                    nik: (entry.nik || '').trim(),
+                                    status: entry.status || 'Proses Lengkapi'
+                                });
+                                addedCount++;
+                            }
+                        }
+                    });
+
+                    saveToStorage();
+                    populateRantingFilter();
+                    renderTable();
+                    updateStats();
+                    showToast(`Berhasil menggabungkan ${addedCount} data calon amil baru!`);
+                } catch (err) {
+                    console.error(err);
+                    showToast('Gagal membaca file JSON. Pastikan format benar.', 'warning');
+                } finally {
+                    event.target.value = '';
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Siapkan Tanggal Otomatis & Subjudul Filter Sebelum Print
+        function prepareAndPrint() {
+            const bulanIndo = [
+                'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+                'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+            ];
+            const now = new Date();
+            const tanggalStr = `Singosari, ${now.getDate()} ${bulanIndo[now.getMonth()]} ${now.getFullYear()}`;
+            document.getElementById('print-date-location').textContent = tanggalStr;
+
+            const rantingFilter = document.getElementById('filter-ranting').value;
+            const subtitleEl = document.getElementById('print-filter-subtitle');
+            if (rantingFilter !== 'all') {
+                subtitleEl.textContent = `UNIT: ${rantingFilter.toUpperCase()} — MWC NU SINGOSARI KABUPATEN MALANG`;
+            } else {
+                subtitleEl.textContent = 'UPZIS & JPZIS NU SE-MWC SINGOSARI KABUPATEN MALANG';
+            }
+
+            window.print();
+        }
+
+        // Notifikasi Toast Halus
+        let toastTimeout;
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const msgEl = document.getElementById('toast-message');
+            const iconWrap = document.getElementById('toast-icon-wrap');
+
+            msgEl.textContent = message;
+            if (type === 'warning') {
+                iconWrap.className = 'p-1 rounded-lg bg-amber-500/20 text-amber-400';
+                iconWrap.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4"></i>';
+            } else {
+                iconWrap.className = 'p-1 rounded-lg bg-emerald-500/20 text-emerald-400';
+                iconWrap.innerHTML = '<i data-lucide="check-circle-2" class="w-4 h-4"></i>';
+            }
+            lucide.createIcons();
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3200);
+        }
+    </script>
+</body>
+</html>
